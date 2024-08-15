@@ -3,6 +3,7 @@ import "./OurClients.css";
 import AnimatedSection from "../../components/AnimatedSection";
 import { Client as ClientModel } from "../../models/client";
 import { fetchClients } from "../../../network/clients_api";
+import { API_BASE_URL } from "../../../network/config";
 
 const OurClients: React.FC = () => {
   const [clients, setClients] = useState<ClientModel[]>([]);
@@ -21,7 +22,7 @@ const OurClients: React.FC = () => {
 
   const formatImageUrl = (url: string) => {
     if (url) {
-      return `http://localhost:8000/storage/${url}`;
+      return `${API_BASE_URL}/storage/${url}`;
     }
   };
 

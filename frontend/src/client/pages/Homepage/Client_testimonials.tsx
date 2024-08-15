@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Client_testimonials.css";
 import { fetchClients } from "../../../network/clients_api";
 import { Client as ClientModel } from "../../models/client";
+import { API_BASE_URL } from "../../../network/config";
 
 const ClientCarousel = () => {
   const [clients, setClients] = useState<ClientModel[]>([]);
@@ -56,7 +57,7 @@ const ClientCarousel = () => {
     if (!url) {
       return "";
     }
-    return `http://localhost:8000/storage/${url}`;
+    return `${API_BASE_URL}/storage/${url}`;
   };
 
   return (

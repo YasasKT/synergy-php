@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import ActionPopup from "../components/ActionPopup";
 import ConfirmationPopup from "../components/ConfirmationPopup";
+import { API_BASE_URL } from "../../network/config";
 
 function Clients() {
   const [clients, setClients] = useState<ClientModel[]>([]);
@@ -110,7 +111,7 @@ function Clients() {
   };
 
   const formatImageUrl = (path: string) => {
-    return `http://localhost:8000/storage/${path}`;
+    return `${API_BASE_URL}/storage/${path}`;
   };
 
   const clientsTable = (

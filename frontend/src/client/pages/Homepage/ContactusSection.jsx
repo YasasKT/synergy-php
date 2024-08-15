@@ -6,6 +6,7 @@ import contactImage from "../../images/Contact-home.png";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { API_BASE_URL } from "./../../../network/config";
 
 const ContactUs = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import "../css/uploader.css";
 import { RiImageAddFill } from "react-icons/ri";
 import { FaFileImage } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { API_BASE_URL } from "../../network/config";
 
 interface UploaderProps {
   onImageChange: (file: File | null) => void;
@@ -48,7 +49,7 @@ const Uploader: React.FC<UploaderProps> = ({
   };
 
   const formatImageUrl = (path: string) => {
-    return `http://localhost:8000/storage/${path}`;
+    return `${API_BASE_URL}/storage/${path}`;
   };
 
   const getImageFileName = (imageUrl: string): string => {

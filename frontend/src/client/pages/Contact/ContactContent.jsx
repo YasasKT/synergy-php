@@ -7,6 +7,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import AnimatedSection from "../../components/AnimatedSection";
 import "./ContactContent.css";
+import { API_BASE_URL } from './../../../network/config';
 
 const ContactContent = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const ContactContent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

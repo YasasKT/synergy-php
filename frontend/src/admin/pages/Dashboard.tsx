@@ -8,6 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import ActionPopup from "../components/ActionPopup";
 import useUser from "../hooks/useUser";
+import { API_BASE_URL } from "../../network/config";
 
 function Dashboard() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -34,7 +35,7 @@ function Dashboard() {
       try {
         setShowLoadingError(false);
         setLoading(true);
-        const response = await fetch("http://localhost:8000/api/projects", {
+        const response = await fetch(`${API_BASE_URL}/api/projects`, {
           method: "GET",
         });
         if (!response.ok) {
@@ -62,7 +63,7 @@ function Dashboard() {
       try {
         setShowLoadingError(false);
         setLoading(true);
-        const response = await fetch("http://localhost:8000/api/clients", {
+        const response = await fetch(`${API_BASE_URL}/api/clients`, {
           method: "GET",
         });
         if (!response.ok) {

@@ -1,4 +1,5 @@
 import { User } from "../admin/models/user";
+import { API_BASE_URL } from "./config";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
   const response = await fetch(input, { ...init, credentials: "include" });
@@ -42,14 +43,14 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getLoggedInUser(): Promise<User> {
-  const response = await fetchData("http://localhost:8000/api/users", {
+  const response = await fetchData(`${API_BASE_URL}/api/users`, {
     method: "GET",
   });
   return response.json();
 }
 
 export async function getAllUsers(): Promise<User[]> {
-  const response = await fetchData("http://localhost:8000/api/users/admins", {
+  const response = await fetchData(`${API_BASE_URL}/api/users/admins`, {
     method: "GET",
   });
   return response.json();
@@ -63,7 +64,7 @@ export interface SignUpCredentials {
 }
 
 export async function signUp(credentials: SignUpCredentials): Promise<User> {
-  const response = await fetchData("http://localhost:8000/api/auth/signup", {
+  const response = await fetchData(`${API_BASE_URL}/api/auth/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -79,7 +80,7 @@ export interface LoginCredentials {
 }
 
 export async function login(credentials: LoginCredentials): Promise<User> {
-  const response = await fetchData("http://localhost:8000/api/auth/login", {
+  const response = await fetchData(`${API_BASE_URL}/api/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +91,7 @@ export async function login(credentials: LoginCredentials): Promise<User> {
 }
 
 export async function logout() {
-  await fetchData("http://localhost:8000/api/auth/logout", { method: "POST" });
+  await fetchData(`${API_BASE_URL}/api/auth/logout`, { method: "POST" });
 }
 
 export interface UpdateCredentials {
@@ -105,7 +106,7 @@ export async function updateProfile(
   credentials: UpdateCredentials
 ): Promise<User> {
   try {
-    const response = await fetchData(`http://localhost:8000/api/users/${id}`, {
+    const response = await fetchData(`${API_BASE_URL}/api/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -131,7 +132,7 @@ export async function updateProfile(
 }
 
 export async function deleteProfile(id: string) {
-  await fetchData(`http://localhost:8000/api/users/${id}`, {
+  await fetchData(`${API_BASE_URL}/api/users/${id}`, {
     method: "DELETE",
   });
 }

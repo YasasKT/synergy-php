@@ -1,4 +1,5 @@
 import { Project } from "../admin/models/project";
+import { API_BASE_URL } from "./config";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
   const response = await fetch(input, { ...init, credentials: "include" });
@@ -41,7 +42,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function fetchProjects(): Promise<Project[]> {
-  const response = await fetch("http://localhost:8000/api/projects");
+  const response = await fetch(`${API_BASE_URL}/api/projects`);
   if (!response.ok) {
     throw new Error("Failed to fetch projects");
   }
@@ -60,7 +61,7 @@ export async function fetchProjects(): Promise<Project[]> {
 
 export async function fetchProject(projectId?: string): Promise<Project> {
   const response = await fetchData(
-    "http://localhost:8000/api/projects/" + projectId,
+    `${API_BASE_URL}/api/projects/` + projectId,
     {
       method: "GET",
     }
@@ -78,7 +79,7 @@ export interface ProjectInput {
 }
 
 export async function createProject(project: FormData): Promise<Project> {
-  const response = await fetchData("http://localhost:8000/api/projects", {
+  const response = await fetchData(`${API_BASE_URL}/api/projects`, {
     method: "POST",
     // headers: {
     //   "Content-Type": "application/json",
@@ -93,7 +94,7 @@ export async function updateProject(
   project: FormData
 ): Promise<Project> {
   const response = await fetchData(
-    "http://localhost:8000/api/projects/" + projectId,
+    `${API_BASE_URL}/api/projects/` + projectId,
     {
       method: "POST",
       // headers: {
@@ -106,7 +107,7 @@ export async function updateProject(
 }
 
 export async function deleteProject(projectId: string) {
-  await fetchData("http://localhost:8000/api/projects/" + projectId, {
+  await fetchData(`${API_BASE_URL}/api/projects/` + projectId, {
     method: "DELETE",
   });
 }

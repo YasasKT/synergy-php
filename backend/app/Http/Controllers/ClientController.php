@@ -27,7 +27,7 @@ class ClientController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'imageUrl' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imageUrl' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
 
         if ($validator->fails()) {
@@ -68,7 +68,7 @@ class ClientController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|required|string|max:255',
-            'imageUrl' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imageUrl' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
 
         if ($validator->fails()) {

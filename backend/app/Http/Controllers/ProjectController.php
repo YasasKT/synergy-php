@@ -27,7 +27,7 @@ class ProjectController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 'type' => 'required|string|max:255',
-                'imageUrl' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'imageUrl' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
                 'client_id' => 'required|exists:clients,id',
                 'location' => 'required|string|max:255',
                 'year' => 'required|string|max:4',
@@ -77,7 +77,7 @@ class ProjectController extends Controller
             'location' => 'sometimes|required|string|max:255',
             'year' => 'sometimes|required|integer',
             'description' => 'nullable|string',
-            'imageUrl' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imageUrl' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
 
         if ($validator->fails()) {

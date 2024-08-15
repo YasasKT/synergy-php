@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import ActionPopup from "../components/ActionPopup";
 import ConfirmationPopup from "../components/ConfirmationPopup";
+import { API_BASE_URL } from "../../network/config";
 
 function Projects() {
   const [projects, setProjects] = useState<ProjectModel[]>([]);
@@ -115,7 +116,7 @@ function Projects() {
 
   const formatImageUrl = (url: string) => {
     if (url) {
-      return `http://localhost:8000/storage/${url}`;
+      return `${API_BASE_URL}/storage/${url}`;
     }
   };
 

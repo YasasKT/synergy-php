@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import BlogImage from "../../images/Blog-image.png";
 import "./BlogDetailed.css";
+import { API_BASE_URL } from "./../../../network/config";
 
 const BlogDetailed = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const BlogDetailed = () => {
     // Fetch blog details from the backend
     const fetchBlogDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/blogs/${id}`);
+        const response = await fetch(`${API_BASE_URL}/api/blogs/${id}`);
         const data = await response.json();
         setBlog(data);
       } catch (error) {

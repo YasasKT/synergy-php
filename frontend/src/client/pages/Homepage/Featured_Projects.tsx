@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { fetchProjects } from "../../../network/projects_api";
 import { Project as ProjectModel } from "../../models/project";
+import { API_BASE_URL } from "../../../network/config";
 
 const Projects = () => {
   const [projects, setProjects] = useState<ProjectModel[]>([]);
@@ -46,7 +47,7 @@ const Projects = () => {
     if (!url) {
       return "";
     }
-    return `http://localhost:8000/storage/${url}`;
+    return `${API_BASE_URL}/storage/${url}`;
   };
 
   return (

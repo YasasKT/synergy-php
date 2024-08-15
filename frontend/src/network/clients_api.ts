@@ -1,4 +1,5 @@
 import { Client } from "../admin/models/client";
+import { API_BASE_URL } from "./config";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
   const response = await fetch(input, { ...init, credentials: "include" });
@@ -41,19 +42,16 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function fetchClients(): Promise<Client[]> {
-  const response = await fetchData("http://localhost:8000/api/clients", {
+  const response = await fetchData(`${API_BASE_URL}/api/clients`, {
     method: "GET",
   });
   return response.json();
 }
 
 export async function fetchClient(clientId?: string): Promise<Client> {
-  const response = await fetchData(
-    "http://localhost:8000/api/clients/" + clientId,
-    {
-      method: "GET",
-    }
-  );
+  const response = await fetchData(`${API_BASE_URL}/api/clients/` + clientId, {
+    method: "GET",
+  });
   return response.json();
 }
 
@@ -63,7 +61,7 @@ export interface ClientInput {
 }
 
 export async function createClient(client: FormData): Promise<Client> {
-  const response = await fetchData("http://localhost:8000/api/clients", {
+  const response = await fetchData(`${API_BASE_URL}/api/clients`, {
     method: "POST",
     // headers: {
     //   "Content-Type": "application/json",
@@ -77,19 +75,16 @@ export async function updateClient(
   clientId: string,
   client: FormData
 ): Promise<Client> {
-  const response = await fetchData(
-    "http://localhost:8000/api/clients/" + clientId,
-    {
-      method: "POST",
-      credentials: "include",
-      body: client,
-    }
-  );
+  const response = await fetchData(`${API_BASE_URL}/api/clients/` + clientId, {
+    method: "POST",
+    credentials: "include",
+    body: client,
+  });
   return response.json();
 }
 
 export async function deleteClient(clientId: string) {
-  await fetchData("http://localhost:8000/api/clients/" + clientId, {
+  await fetchData(`${API_BASE_URL}/api/clients/` + clientId, {
     method: "DELETE",
   });
 }

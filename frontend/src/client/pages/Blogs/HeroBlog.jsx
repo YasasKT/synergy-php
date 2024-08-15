@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AnimatedSection from "../../components/AnimatedSection";
 import "./HeroBlog.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./../../../network/config";
 
 const BlogsPage = () => {
   const [latestBlog, setLatestBlog] = useState(null);
@@ -11,7 +12,7 @@ const BlogsPage = () => {
     // Fetch the latest blog from the backend
     const fetchLatestBlog = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/blogs/latest");
+        const response = await fetch(`${API_BASE_URL}/api/blogs/latest`);
         const data = await response.json();
         setLatestBlog(data);
       } catch (error) {
