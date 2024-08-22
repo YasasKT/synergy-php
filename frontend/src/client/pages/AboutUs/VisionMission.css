@@ -84,7 +84,7 @@
 }
 
 .line-story {
-  width: 100px;
+  width: 50px;
   border-top: 2px solid #0592c8;
   margin-bottom: 1rem;
 }
@@ -154,6 +154,10 @@
   }
 
   .text-container p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .final-text-story {
+    font-size: 1.3rem;
   }
 }

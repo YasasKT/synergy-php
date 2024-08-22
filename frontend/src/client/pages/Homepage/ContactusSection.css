@@ -148,11 +148,13 @@
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.5s ease-out;
 }
 
 .contact-form button:hover {
-    background-color: #014c59;
+    background-color: #29b4eb; /* Button background color on hover */
+    color: #fff; /* Ensure text color remains visible */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive styles */
@@ -224,6 +226,9 @@
 }
 
 @media (max-width: 576px) {
+    .contact-us-home-section {
+        margin-top: 0;
+    }
     .Header {
         font-size: 30px;
     }
@@ -233,7 +238,9 @@
     }
 
     .Header-text {
+        text-align: left;
         font-size: 0.8rem;
+        margin-top: 15px;
         margin-bottom: 20px;
     }
 

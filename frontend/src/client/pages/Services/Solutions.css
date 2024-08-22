@@ -200,7 +200,7 @@
 /* Small screens (phones) */
 @media (max-width: 576px) {
   .solutions-section {
-    padding: 2rem 1rem;
+    padding: 0;
   }
 
   .header-sec {
@@ -224,6 +224,7 @@
 
   .solution-card p {
     font-size: 1rem;
+    width: 300px;
   }
 
   .solution-card ul li {

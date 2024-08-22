@@ -27,13 +27,37 @@ const GlobalPresence = () => {
         locations.forEach((location, index) => {
             setTimeout(() => {
                 setActiveIcons((prevIcons) => [...prevIcons, location.name]);
-            }, index * 1000); // Adjust the delay as needed (1000ms for this example)
+            }, index * 1000);
 
             setTimeout(() => {
                 setActiveTexts((prevTexts) => [...prevTexts, location.name]);
-            }, index * 1000 + 500); // Text appears 500ms after the icon
+            }, index * 1000 + 500);
         });
     }, []);
+
+    const getResponsiveMarkerSize = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 576) return 10;
+        if (screenWidth < 768) return 16;
+        if (screenWidth < 992) return 20;
+        return 24;
+    };
+
+    const getResponsiveFontSize = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 576) return '0.5rem';
+        if (screenWidth < 768) return '1rem';
+        if (screenWidth < 992) return '1.25rem';
+        return '1.5rem';
+    };
+
+    const getMarginTop = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 576) return '20px';
+        if (screenWidth < 768) return '-15px';
+        if (screenWidth < 992) return '-20px';
+        return '-25px';
+    };
 
     return (
         <section className="global-presence-section">
@@ -57,15 +81,23 @@ const GlobalPresence = () => {
                 <div className="map-markers">
                     {locations.map((location) => (
                         <React.Fragment key={location.name}>
-                            <div className="location" style={{ top: `calc(${location.top} - 40px)`, left: `calc(${location.left} - 40px)` }}>
+                            <div className="location" style={{ top: location.top, left: location.left }}>
                                 {activeIcons.includes(location.name) && (
                                     <AnimatedSection animationType="popUp">
-                                        <FaMapMarkerAlt color='red' size={18}/>
+                                        <FaMapMarkerAlt color='red' size={getResponsiveMarkerSize()} />
                                     </AnimatedSection>
                                 )}
                             </div>
                             {activeTexts.includes(location.name) && (
-                                <div className="marker" style={{ top: location.top, left: location.left }}>
+                                <div
+                                    className="marker"
+                                    style={{
+                                        top: location.top,
+                                        left: location.left,
+                                        fontSize: getResponsiveFontSize(),
+                                        marginTop: getMarginTop() // Adjust the margin to position text better
+                                    }}
+                                >
                                     <AnimatedSection animationType="scaleUp">
                                         {location.name}
                                     </AnimatedSection>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
@@ -21,6 +21,7 @@ import AboutUs from "./client/pages/AboutUs/AboutUs";
 import Project from "./client/pages/Projects/Projects";
 import Blogs from "./client/pages/Blogs/Blogs";
 import Contact from "./client/pages/Contact/Contact";
+import SplashScreen from "./client/components/SplashScreen";
 
 const router = createBrowserRouter([
   {
@@ -142,8 +143,35 @@ const router = createBrowserRouter([
   },
 ]);
 
+const Main = () => {
+  const [isSplashvisible, setIsSplashVisible] = useState(false);
+
+  useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    if (!hasVisited) {
+      setIsSplashVisible(true);
+      localStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
+  const handleAnimationEnd = () => {
+    setIsSplashVisible(false);
+  };
+
+  return (
+    <>
+      {isSplashvisible ? (
+        <SplashScreen onAnimationEnd={handleAnimationEnd} />
+      ) : (
+        <RouterProvider router={router} />
+      )}
+    </>
+  );
+};
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Main />
   </React.StrictMode>
 );

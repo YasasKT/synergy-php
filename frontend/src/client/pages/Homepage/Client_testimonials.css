@@ -33,7 +33,7 @@
 /* Responsive styles */
 @media (max-width: 1200px) {
   .header-test {
-      font-size: 2rem;
+      font-size: 2.8rem;
       margin-bottom: 5rem;
   }
 
@@ -49,7 +49,7 @@
 
 @media (max-width: 992px) {
   .header-test {
-      font-size: 1.8rem;
+      font-size: 2.6rem;
       margin-bottom: 4rem;
   }
 
@@ -66,7 +66,7 @@
 
 @media (max-width: 768px) {
   .header-test {
-      font-size: 1.6rem;
+      font-size: 2.4rem;
       margin-bottom: 3rem;
   }
 
@@ -83,7 +83,7 @@
 
 @media (max-width: 576px) {
   .header-test {
-      font-size: 1.4rem;
+      font-size: 2.2rem;
       margin-bottom: 2rem;
   }
 
@@ -100,7 +100,7 @@
 
 @media (max-width: 400px) {
   .header-test {
-      font-size: 1.2rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
   }
 

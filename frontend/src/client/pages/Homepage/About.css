@@ -60,6 +60,7 @@
 }
 
 .about-text .readmore-btn {
+  position: relative;
   padding: 1rem 2rem;
   font-size: 1rem;
   color: #fff;
@@ -67,11 +68,15 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  overflow: hidden;
+  transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; /* Smooth transition for color, background, and shadow */
+  z-index: 1; /* Ensure the button text is on top */
 }
 
 .about-text .readmore-btn:hover {
-  background: #014c59;
+  background-color: #29b4eb; /* Button background color on hover */
+  color: #fff; /* Ensure text color remains visible */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
 }
 
 /* Responsive styles */

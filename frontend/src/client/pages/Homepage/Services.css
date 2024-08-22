@@ -197,19 +197,21 @@
     }
 }
 
-@media (max-width: 480px) {
-    .circle {
-        width: 100%;
-        padding-bottom: 100%;
-        margin-bottom: 2rem;
-    }
-
+@media (max-width: 576px) {
     .service {
-        width: 200px;
+        width: 300px;
+    }
+    
+    .Header-service {
+        font-size: 25px;
     }
 
-    .service img {
-        width: 40px;
+    .service h3::first-letter {
+        color: black;
+        font-size: 30px;
+        position: relative;
+        margin-left: -20px;
+        z-index: -1;
     }
 
     .service h3 {
@@ -217,20 +219,28 @@
     }
 
     .service p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .consulting {
-        top: 35%;
+        top: 30%;
+        left: 45%;
     }
 
     .designing {
-        top: 75%;
-        right: 30%;
+        top: 135%;
+        right: 55%;
     }
 
     .contracting {
-        bottom: 35%;
-        left: 30%;
+        bottom: 15%;
+        left: 45%;
+    }
+
+    .line1 {
+        margin-top: 18rem;
+        width: 50px;
     }
 }
+
+

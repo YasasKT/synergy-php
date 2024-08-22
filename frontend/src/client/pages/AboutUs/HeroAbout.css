@@ -46,7 +46,7 @@
   font-weight: 600;
 }
 
-.hero-header h1 .highlight {
+.hero-about-header h1 .highlight {
   color: #0592c8;
   font-size: 4.5rem;
   opacity: 70%;
@@ -70,19 +70,19 @@
     flex-direction: row;
   }
 
-  .hero-header h1 {
+  .hero-about-header h1 {
     font-size: 4rem;
   }
 
-  .hero-header h1 .highlight {
+  .hero-about-header h1 .highlight {
     font-size: 4.5rem;
   }
 
-  .hero-text {
+  .hero-about-text {
     padding-left: 4rem;
   }
 
-  .hero-text p {
+  .hero-about-text p {
     font-size: 1.2rem;
   }
 }
@@ -93,25 +93,26 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1.5rem;
   }
 
-  .hero-header {
+  .hero-about-header {
     margin-bottom: 2rem;
   }
 
-  .hero-header h1 {
+  .hero-about-header h1 {
     font-size: 3rem;
   }
 
-  .hero-header h1 .highlight {
+  .hero-about-header h1 .highlight {
     font-size: 3.5rem;
   }
 
-  .hero-text {
+  .hero-about-text {
     padding: 0 2rem;
   }
 
-  .hero-text p {
+  .hero-about-text p {
     font-size: 1rem;
   }
 }
@@ -119,22 +120,45 @@
 /* Small screens (phones) */
 @media (max-width: 576px) {
   .about-hero-content {
+    text-align: left;
     padding: 1rem;
   }
-
-  .hero-header h1 {
+  .hero-about-header h1 {
     font-size: 2.5rem;
   }
 
-  .hero-header h1 .highlight {
+  .hero-about-header h1 .highlight {
     font-size: 3rem;
   }
 
-  .hero-text {
+  .hero-about-text {
     padding: 0;
   }
 
-  .hero-text p {
+  .hero-about-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-hero-content {
+    text-align: left;
+    padding: 1rem;
+  }
+  .hero-about-header h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .hero-about-header h1 .highlight {
+    font-size: 2.5rem;
+  }
+
+  .hero-about-text {
+    padding: 0;
+  }
+
+  .hero-about-text p {
     font-size: 0.9rem;
   }
 }

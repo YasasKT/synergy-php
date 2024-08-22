@@ -8,6 +8,7 @@
     --input-padding: 0.625rem;
     --button-padding: 0.625rem;
     --button-size: 0.9375rem;
+    --glow-color: #0592c8;
 }
 
 .footer {
@@ -101,7 +102,8 @@
 }
 
 .contact-info-footer .social-icons-footer a:hover {
-    color: #0592c8;
+    color: var(--glow-color); /* Glowing icon color */
+    filter: drop-shadow(0 0 10px var(--glow-color));
 }
 
 .newsletter p {

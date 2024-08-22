@@ -53,32 +53,60 @@
   font-size: 22px;
   transition: color 0.3s ease, font-weight 0.3s ease;
   margin: 0.5rem 0;
+  position: relative; /* Position relative for the pseudo-element */
+  display: inline-block; /* Ensure space for underline effect */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Position below the text */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  width: 100%; /* Full width on hover */
 }
 
 .nav-links a.active {
   font-weight: bold;
+  color: #fff;
 }
 
 .nav-links a:hover {
-  color: #000000;
+  color: black; /* Change text color on hover */
 }
 
 .quote-button {
-  display: flex;
-  white-space: nowrap;
-  font-size: 1.1rem;
   background-color: white;
   color: black;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.5s ease-in-out;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .quote-button:hover {
-  background-color: #000000;
+  background-color: black;
   color: white;
+}
+
+.quote-button span {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.quote-button:hover span {
+  transform: translateX(10px);
 }
 
 /* Animation keyframes */
@@ -129,5 +157,20 @@
 
   .menu-toggle {
     display: none; /* Hide menu toggle on larger screens */
+  }
+}
+
+/* Mobile-specific hover effects for navigation links */
+@media (max-width: 768px) {
+  .nav-links a:hover {
+    color: black; /* Different text color on hover */
+    font-size: 24px; /* Increase font size on hover */
+    transform: scale(1.1); /* Slightly enlarge the link */
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  }
+
+  /* Remove the underline effect for mobile devices */
+  .nav-links a::before {
+    display: none;
   }
 }
