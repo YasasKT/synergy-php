@@ -2,6 +2,7 @@
 .client-carousel-section {
   text-align: center;
   padding: 50px 20px;
+  margin-bottom: 2rem;
 }
 
 .client-logo-container {
@@ -92,9 +93,9 @@
   }
 
   .client-logo {
-      max-width: 50px;
-      max-height: 70px;
-      margin-left: 4rem;
+      max-width: 80px;
+      max-height: 80px;
+      margin-left: 12rem;
   }
 }
 
@@ -107,10 +108,11 @@
   .line-testi {
       width: 16%;
   }
+  
 
   .client-logo {
       max-width: 40px;
       max-height: 60px;
-      margin-left: 7rem;
+      margin-left: 6rem;
   }
 }

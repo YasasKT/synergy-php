@@ -70,7 +70,7 @@ const GlobalPresence = () => {
                         </AnimatedSection>
                         <AnimatedSection animationType="slideInFromBottom">
                             <p className="description">
-                                We have established a robust global presence, delivering cutting-edge engineering solutions to clients across multiple continents. With a network of strategic partnerships and regional offices, we provide tailored services and products that meet the unique needs of each market. Our commitment and excellence and innovation ensures that we remain a trusted partner for clients worldwide.
+                                We have established a robust global presence, delivering cutting-edge engineering solutions to clients across multiple continents. With a network of strategic partnerships and regional offices, we provide tailored services and products that meet the unique needs of each market. Our commitment to excellence and innovation ensures that we remain a trusted partner for clients worldwide.
                             </p>
                         </AnimatedSection>
                     </div>
@@ -95,7 +95,7 @@ const GlobalPresence = () => {
                                         top: location.top,
                                         left: location.left,
                                         fontSize: getResponsiveFontSize(),
-                                        marginTop: getMarginTop() // Adjust the margin to position text better
+                                        marginTop: getMarginTop()
                                     }}
                                 >
                                     <AnimatedSection animationType="scaleUp">

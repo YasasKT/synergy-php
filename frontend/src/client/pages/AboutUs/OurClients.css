@@ -59,6 +59,12 @@
     .our-clients h2 {
       font-size: 1.8rem;
     }
+
+    .clients-image {
+      width: 50%;
+      margin: 50px;
+      margin-left: 120px;
+    }
   } 
 
   @media (max-width: 400px) {
@@ -71,7 +77,7 @@
     }
 
     .clients-image {
-      width: 30%;
+      width: 50%;
       margin: 50px;
       margin-left: 100px;
     }

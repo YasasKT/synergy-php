@@ -4,7 +4,7 @@
     width: 100%;
     height: auto;
     text-align: center;
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .header-container {
@@ -51,7 +51,7 @@
 
 .global-presence-overlay h2 {
     font-size: 3rem;
-    padding-top: 3rem;
+    padding-top: 1rem;
     opacity: 70%;
 }
 
@@ -246,7 +246,7 @@
     }
 
     .description {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
         
     }
 

@@ -4,6 +4,7 @@ import './Services.css';
 import Consulting from '../../images/consulting.png';
 import Designing from '../../images/designing.png';
 import Contracting from '../../images/contracting.png';
+import Synlogo from '../../images/Synergy_logo.png';
 
 const Services = () => {
     const [activeService, setActiveService] = useState(0);
@@ -19,6 +20,20 @@ const Services = () => {
 
     return (
         <section className='lifecycle'>
+                <img 
+                src={Synlogo}
+                alt="Background Logo"
+                style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '100%',
+                    height: 'auto',
+                    zIndex: -1,
+                    opacity: 0.3,
+                }}
+                />
             <AnimatedSection animationType="slideInFromBottom">
                 <div className="line-service"></div>
                 <h2 className="Header-service">Our Services</h2>

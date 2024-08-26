@@ -1,5 +1,5 @@
 .all-projects {
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
 }
 
@@ -17,6 +17,7 @@
 }
 
 .project-cards {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,13 +135,13 @@
 @media (max-width: 576px) {
   .allproj-head {
     font-size: 2.5rem;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .project-card {
     max-width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .project-card h3 {

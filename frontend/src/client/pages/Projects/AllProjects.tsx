@@ -8,7 +8,7 @@ import { API_BASE_URL } from "../../../network/config";
 const AllProjects: React.FC = () => {
   const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 3;
+  const projectsPerPage = 4;
 
   useEffect(() => {
     async function loadProjects() {

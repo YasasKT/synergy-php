@@ -99,7 +99,6 @@ const Projects = () => {
               <div key={index}>
                 <div className="project-slide">
                   <h3>{project.type}</h3>
-                  <p>{project.description}</p>
                 </div>
               </div>
             ))}
