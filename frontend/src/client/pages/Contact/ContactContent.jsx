@@ -72,13 +72,17 @@ const ContactContent = () => {
               <br />
               With <span className="highlight">US</span>
             </h1>
+          </AnimatedSection>
+          <AnimatedSection animationType="slideInFromLeft" delay={500}>
             <h2>Let's Talk!</h2>
             <p>
               Get in touch with us using the enquiry form or contact information
               below.
             </p>
-            <form className="contact-form">
-              <div className="form-row">
+          </AnimatedSection>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <AnimatedSection animationType="fadeIn" delay={800}>
                 <input
                   type="text"
                   name="firstName"
@@ -87,6 +91,8 @@ const ContactContent = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                 />
+              </AnimatedSection>
+              <AnimatedSection animationType="fadeIn" delay={1200}>
                 <input
                   type="text"
                   name="lastName"
@@ -95,7 +101,9 @@ const ContactContent = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                 />
-              </div>
+              </AnimatedSection>
+            </div>
+            <AnimatedSection animationType="fadeIn" delay={1600}>
               <input
                 type="email"
                 name="email"
@@ -104,6 +112,8 @@ const ContactContent = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
+            </AnimatedSection>
+            <AnimatedSection animationType="fadeIn" delay={2000}>
               <input
                 type="text"
                 name="subject"
@@ -112,6 +122,8 @@ const ContactContent = () => {
                 value={formData.subject}
                 onChange={handleChange}
               />
+            </AnimatedSection>
+            <AnimatedSection animationType="fadeIn" delay={2400}>
               <textarea
                 name="message"
                 placeholder="Message"
@@ -119,35 +131,43 @@ const ContactContent = () => {
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
-              <button type="submit">Submit</button>
-              {formStatus.success && (
-                <p className="success-message">Message sent successfully!</p>
-              )}
-              {formStatus.error && (
-                <p className="error-message">
-                  Failed to send the message. Please try again.
-                </p>
-              )}
-            </form>
-          </AnimatedSection>
+            </AnimatedSection>
+            <button type="submit">Submit</button>
+            {formStatus.success && (
+              <p className="success-message">Message sent successfully!</p>
+            )}
+            {formStatus.error && (
+              <p className="error-message">
+                Failed to send the message. Please try again.
+              </p>
+            )}
+          </form>
         </div>
         <div className="contact-right">
-          <AnimatedSection animationType="slideInFromRight">
+            <AnimatedSection animationType="fadeIn" delay={400}>
             <img src={Image} alt="Contact Us" className="contact-image" />
+            </AnimatedSection>
             <div className="contact-info">
               <div className="contact-info-item">
+              <AnimatedSection animationType="fadeIn" delay={800}>
                 <div className="icon">
                   <FaPhone size={35} />
                 </div>
+              </AnimatedSection>  
+              <AnimatedSection animationType="slideInFromRight" delay={800}>
                 <div className="contact-item-text">
                   <p className="contact-info-header">Phone</p>
                   <p className="contact-info-text">+94 112 156 815</p>
                 </div>
+                </AnimatedSection>
               </div>
               <div className="contact-info-item">
+              <AnimatedSection animationType="fadeIn" delay={1200}>
                 <div className="icon">
                   <MdEmail size={35} />
                 </div>
+                </AnimatedSection>
+                <AnimatedSection animationType="slideInFromRight" delay={1200}>
                 <div className="contact-item-text">
                   <p className="contact-info-header">Email</p>
                   <p className="contact-info-text">
@@ -156,11 +176,15 @@ const ContactContent = () => {
                     </a>
                   </p>
                 </div>
+                </AnimatedSection>
               </div>
               <div className="contact-info-item">
+              <AnimatedSection animationType="fadeIn" delay={1600}>
                 <div className="icon">
                   <FaMapMarkerAlt size={35} />
                 </div>
+                </AnimatedSection>
+                <AnimatedSection animationType="slideInFromRight" delay={1600}>
                 <div className="contact-item-text">
                   <p className="contact-info-header">Location</p>
                   <p className="contact-info-text">
@@ -174,23 +198,31 @@ const ContactContent = () => {
                     </a>
                   </p>
                 </div>
+                </AnimatedSection>
               </div>
             </div>
             <div className="follow-us">
+              <AnimatedSection animationType="fadeIn" delay={2000}>
               <h3>Follow Us</h3>
+              </AnimatedSection>
               <div className="social-icons">
+                <AnimatedSection animationType="rotate" delay={2400}>
                 <a href="https://web.facebook.com/synergypvtltd">
                   <FaFacebook size={35} />
                 </a>
+                </AnimatedSection>
+                <AnimatedSection animationType="rotate" delay={2800}>
                 <a href="https://www.linkedin.com/company/synergypvtltd/">
                   <FaLinkedin size={35} />
                 </a>
+                </AnimatedSection>
+                <AnimatedSection animationType="rotate" delay={3200}>
                 <a href="https://www.instagram.com/synergypvtltd">
                   <FaInstagram size={35} />
                 </a>
+                </AnimatedSection>
               </div>
             </div>
-          </AnimatedSection>
         </div>
       </div>
       <div className="map-container animate-on-load">

@@ -9,14 +9,18 @@ const CertificatesSection = () => {
     <section className="certificates-section">
       <div className="certificates-container">
         <div className="certificate">
+          <AnimatedSection animationType="slideInFromTop">
           <p>CIDA Certification</p>
-          <AnimatedSection animationType="zoomIn">
+          </AnimatedSection>
+          <AnimatedSection animationType="zoomIn" delay={500}>
             <img src={certificate1} alt="Certificate 1" />
           </AnimatedSection>
         </div>
         <div className="certificate">
+          <AnimatedSection animationType="slideInFromTop" delay={1000}>
           <p>ISO Certification</p>
-          <AnimatedSection animationType="zoomIn">
+          </AnimatedSection>
+          <AnimatedSection animationType="zoomIn" delay={1500}>
             <img src={certificate2} alt="Certificate 2" />
           </AnimatedSection>
         </div>

@@ -35,16 +35,19 @@ const BlogsPage = () => {
 
   return (
     <section className="blogs-hero-section">
-      <AnimatedSection animationType="fadeIn">
         <div className="blogs-hero-content">
           <div className="blogs-hero-text">
             <h1>
+              <AnimatedSection animationType="fadeIn">
               Our
-              <br />
+              </AnimatedSection>
+              <AnimatedSection animationType="slideInFromLeft" delay={500}>
               <span className="highlight">BLOGS</span>
+              </AnimatedSection>
             </h1>
           </div>
           <div className="blog-card-hero">
+          <AnimatedSection animationType="scaleUp" delay={1000}>
             <h2 className="heroblog-header">{latestBlog.title}</h2>
             <p>
               <strong>Date:</strong> {latestBlog.date}
@@ -53,10 +56,10 @@ const BlogsPage = () => {
             <button className="read-now-button-blog" onClick={handleReadNow}>
               Read Now
             </button>
+            </AnimatedSection>
           </div>
         </div>
-      </AnimatedSection>
-      <AnimatedSection animationType="slideInFromLeft">
+      <AnimatedSection animationType="slideInFromLeft" delay={1500}>
         <hr className="horizontal-line" />
       </AnimatedSection>
     </section>

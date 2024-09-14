@@ -1,6 +1,6 @@
 .animated-section {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 3.5s ease-in-out;
 }
 
 .slideInFromLeft {
@@ -19,16 +19,10 @@
     animation: slideInFromTop 1s forwards;
 }
 
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.slideInfromDiagonal {
+    animation: slideInFromDiagonal 15s forwards;
 }
+
 
 @keyframes slideInFromRight {
     0% {

@@ -31,6 +31,12 @@
   margin-bottom: 1rem;
   font-weight: 600;
   color: black;
+  text-align: left;
+}
+
+.inline-text {
+  display: inline-block;
+  font-size: 3.5rem;
 }
 
 .hero-text .highlight {

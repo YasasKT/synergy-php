@@ -34,10 +34,12 @@ const SolutionsSection = () => {
           <div className="text">
           <AnimatedSection animationType="slideInFromLeft">
             <h3>MECHANICAL SOLUTIONS</h3>
+          </AnimatedSection>
+          <AnimatedSection animationType="slideInFromBottom" delay={500}>
             <p>We offer innovative mechanical solutions, ensuring efficient and reliable systems tailored to your project's unique requirements. Our approach emphasizes sustainability and cutting-edge technology to optimize performance.</p>
           </AnimatedSection>
           </div>
-          <AnimatedSection animationType="slideInFromRight">
+          <AnimatedSection animationType="slideInFromRight" delay={1000}>
           <ul>
             <li>Chilled water systems (Air/Water cooled)</li>
             <li>Package unit air conditioning for large volume commercial areas</li>
@@ -57,10 +59,12 @@ const SolutionsSection = () => {
           <div className="text">
           <AnimatedSection animationType="slideInFromLeft">
             <h3>ELECTRICAL SOLUTIONS</h3>
+          </AnimatedSection>
+          <AnimatedSection animationType="slideInFromBottom" delay={500}>
             <p>We provide comprehensive design, installation, and maintenance, delivering safe and effective power infrastructure for your operations. We prioritize reliability and efficiency to support your energy needs.</p>
           </AnimatedSection>
           </div>
-          <AnimatedSection animationType="slideInFromRight">
+          <AnimatedSection animationType="slideInFromRight" delay={1000}>
           <ul>
             <li>Primary and standby power substations</li>
             <li>Generators and Transformers</li>
@@ -83,10 +87,12 @@ const SolutionsSection = () => {
           <div className="text">
           <AnimatedSection animationType="slideInFromLeft">
             <h3>PLUMBING SOLUTIONS</h3>
+            </AnimatedSection>
+            <AnimatedSection animationType="slideInFromBottom" delay={500}>
             <p>With advanced plumbing solutions, we ensure robust, efficient, and sustainable systems for all types of projects. Our expertise guarantees compliance and long-term reliability.</p>
-          </AnimatedSection>
+            </AnimatedSection>
           </div>
-          <AnimatedSection animationType="slideInFromRight">
+          <AnimatedSection animationType="slideInFromRight" delay={1000}>
           <ul>
             <li>Domestic cold & hot water supply piping Systems</li>
             <li>Sanitary drainage piping Systems</li>
@@ -106,10 +112,12 @@ const SolutionsSection = () => {
           <div className="text">
           <AnimatedSection animationType="slideInFromLeft">
             <h3>ELV & DATA SOLUTIONS</h3>
+            </AnimatedSection>
+            <AnimatedSection animationType="slideInFromBottom" delay={500}>
             <p>Our ELV & Data solutions enhance connectivity and security through cutting-edge technology, optimizing communication and IT infrastructure. We focus on seamless integration and advanced features to meet your specific needs.</p>
-          </AnimatedSection>
+            </AnimatedSection>
           </div>
-          <AnimatedSection animationType="slideInFromRight">
+          <AnimatedSection animationType="slideInFromRight" delay={1000}>
           <ul>
             <li>Access Control Systems</li>
             <li>Audio & Video Systems</li>

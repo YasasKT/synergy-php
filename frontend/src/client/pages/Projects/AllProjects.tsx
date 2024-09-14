@@ -43,17 +43,22 @@ const AllProjects: React.FC = () => {
 
   return (
     <section className="all-projects">
-      <AnimatedSection animationType="slideInFromBottom">
-        <h2 className="allproj-head">
+      <h2 className="allproj-head">
+        <AnimatedSection animationType="slideInFromTop">
           Our <br />
           <span className="highlight-projects">PROJECTS</span>
-        </h2>
-        <div className="project-cards">
-          {currentProjects.map((project) => {
-            const formattedImageUrl = formatImageUrl(project.imageUrl);
-            return (
+        </AnimatedSection>
+      </h2>
+      <div className="project-cards">
+        {currentProjects.map((project, index) => {
+          const formattedImageUrl = formatImageUrl(project.imageUrl);
+          return (
+            <AnimatedSection
+              key={project.id}
+              animationType="fadeIn"
+              delay={index * 800} // Adding delay for staggered animation
+            >
               <div
-                key={project.id}
                 className="project-card"
                 style={{
                   backgroundImage: project.imageUrl
@@ -68,23 +73,23 @@ const AllProjects: React.FC = () => {
                   <p>{project.year}</p>
                 </div>
               </div>
-            );
-          })}
-        </div>
-        <div className="pagination">
-          {pageNumbers.map((number) => (
-            <span
-              key={number}
-              className={`page-number ${
-                currentPage === number ? "active" : ""
-              }`}
-              onClick={() => setCurrentPage(number)}
-            >
-              {number}
-            </span>
-          ))}
-        </div>
-      </AnimatedSection>
+            </AnimatedSection>
+          );
+        })}
+      </div>
+      <div className="pagination">
+        {pageNumbers.map((number) => (
+          <span
+            key={number}
+            className={`page-number ${
+              currentPage === number ? "active" : ""
+            }`}
+            onClick={() => setCurrentPage(number)}
+          >
+            {number}
+          </span>
+        ))}
+      </div>
     </section>
   );
 };

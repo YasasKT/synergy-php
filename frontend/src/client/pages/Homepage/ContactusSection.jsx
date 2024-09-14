@@ -99,7 +99,7 @@ const ContactUs = () => {
             We would love to hear from you. Please fill out the form below and
             we will get in touch with you shortly.
           </p>
-          <form className="contact-form">
+          <form className="contact-form-home">
             <div className="name-fields">
               <input type="text" placeholder="First Name" required />
               <input type="text" placeholder="Last Name" required />

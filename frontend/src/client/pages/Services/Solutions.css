@@ -62,7 +62,7 @@
   flex: 1;
   padding: 1rem; /* Reduced padding for better responsiveness */
   text-align: left;
-  min-width: 700px; /* Ensure minimum width */
+  min-width: 800px; /* Ensure minimum width */
 }
 
 .solution-card h3 {

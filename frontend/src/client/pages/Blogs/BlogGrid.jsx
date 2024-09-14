@@ -12,20 +12,23 @@ const BlogGrid = () => {
 
   return (
     <section className="blog-grid-section">
-      <AnimatedSection animationType="slideInFromBottom">
       <div className='blog-selection'>
+        <AnimatedSection animationType="slideInFromTop">
             <span
             className={`blog-selection-text ${showRecent ? 'active' : ''}`}
             onClick={handleShowRecent}
             >
                 Recent
             </span>
+            </AnimatedSection>
+            <AnimatedSection animationType="slideInFromTop" delay={400}>
             <span 
             className={`blog-selection-text ${!showRecent ? 'active' : ''}`}
             onClick={handleShowAll}
             >
                 All
             </span>
+            </AnimatedSection>
         </div>
       <div className="blogs-grid">
         <div className="blog-card">
@@ -65,7 +68,6 @@ const BlogGrid = () => {
           </div>
         </div>
       </div>
-      </AnimatedSection>
     </section>
   );
 };
