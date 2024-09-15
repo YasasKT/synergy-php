@@ -1,58 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import BlogImage from "../../images/Blog-image.png";
-import "./BlogDetailed.css";
-import { API_BASE_URL } from "./../../../network/config";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import blogImage from '../../images/Blog-image.png';
+import './BlogDetailed.css';
 
 const BlogDetailed = () => {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
 
-  useEffect(() => {
-    // Fetch blog details from the backend
-    const fetchBlogDetails = async () => {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/blogs/${id}`);
-        const data = await response.json();
-        setBlog(data);
-      } catch (error) {
-        console.error("Error fetching blog details:", error);
-      }
-    };
-
-    fetchBlogDetails();
-  }, [id]);
-
-  if (!blog) {
-    return <p>Loading...</p>;
-  }
-
-  /* const blog = {
-        id,
-        title: "Title of the Blog",
-        date: "Some date",
-        content: "Detailed content of the blog...",
-        image: BlogImage,
-    }; */
+  // You can either fetch blog details dynamically by ID or use static content for demonstration
+  const blogDetails = {
+    title: `Title of the Blog ${id}`,
+    date: 'Some date',
+    content: `This is the detailed content of Blog ${id}. You can add as much content as needed here to explain your blog post.`
+  };
 
   return (
-    <div className="blog-detailed">
-      <Header />
-      <section className="blog-detailed-section">
-        <img
-          src={blog.image}
-          alt={blog.title}
-          className="blog-detailed-image"
-        />
-        <div className="blog-detailed-content">
-          <h1>{blog.title}</h1>
-          <p>{blog.date}</p>
-          <p>{blog.content}</p>
-        </div>
-      </section>
-      <Footer />
+    <div className="blog-detail-container">
+      <img src={blogImage} alt="Blog" className="blog-detail-image" />
+      <div className="blog-detail-content">
+        <h1>{blogDetails.title}</h1>
+        <p><strong>Date:</strong> {blogDetails.date}</p>
+        <p>{blogDetails.content}</p>
+      </div>
     </div>
   );
 };

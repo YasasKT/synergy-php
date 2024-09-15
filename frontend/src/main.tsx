@@ -20,6 +20,7 @@ import Services from "./client/pages/Services/Service";
 import AboutUs from "./client/pages/AboutUs/AboutUs";
 import Project from "./client/pages/Projects/Projects";
 import Blogs from "./client/pages/Blogs/Blogs";
+import BlogDetailed from "./client/pages/Blogs/BlogDetailed";
 import Contact from "./client/pages/Contact/Contact";
 import SplashScreen from "./client/components/SplashScreen";
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blogs />,
+  },
+  {
+    path: "/blogdetail",
+    element: <BlogDetailed />,
   },
   {
     path: "/contact",
