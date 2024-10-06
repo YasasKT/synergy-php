@@ -15,6 +15,7 @@ import AddEditClient from "./admin/pages/AddEditClient";
 import { UserProvider } from "./admin/auth/UserProvider";
 import Admins from "./admin/pages/Admins";
 import Messages from "./admin/pages/Messages";
+import MessageView from "./admin/pages/MessageView";
 import NotFoundPage from "./client/pages/NotFoundPage";
 import Services from "./client/pages/Services/Service";
 import AboutUs from "./client/pages/AboutUs/AboutUs";
@@ -146,6 +147,14 @@ const router = createBrowserRouter([
       </UserProvider>
     ),
   },
+  {
+    path: "/admin/messages/view",
+    element: (
+      <UserProvider>
+        <MessageView />
+      </UserProvider>
+    )
+  }
 ]);
 
 const Main = () => {

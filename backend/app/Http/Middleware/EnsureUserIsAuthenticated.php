@@ -19,7 +19,7 @@ class EnsureUserIsAuthenticated
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
-            return response()->json(['message' => 'Unauthorized access'], 401);
+            return response()->json(['message' => 'Unauthorized access vro'], 401);
         }
 
         // Log session data for debugging
