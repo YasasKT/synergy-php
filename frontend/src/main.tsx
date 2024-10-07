@@ -8,10 +8,12 @@ import Login from "./admin/pages/Login";
 import Dashboard from "./admin/pages/Dashboard";
 import Profile from "./admin/pages/Profile";
 import Projects from "./admin/pages/Projects";
+import Blog from "./admin/pages/Blog";
 import Clients from "./admin/pages/Clients";
 import Register from "./admin/pages/Register";
 import AddEditProject from "./admin/pages/AddEditProject";
 import AddEditClient from "./admin/pages/AddEditClient";
+import AddEditBlog from "./admin/pages/AddEditBlog";
 import { UserProvider } from "./admin/auth/UserProvider";
 import Admins from "./admin/pages/Admins";
 import Messages from "./admin/pages/Messages";
@@ -106,6 +108,30 @@ const router = createBrowserRouter([
         <AddEditProject />
       </UserProvider>
     ),
+  },
+  {
+    path: "/admin/blogs",
+    element: (
+      <UserProvider>
+        <Blog />
+      </UserProvider>
+    )
+  },
+  {
+    path: "/admin/blogs/add",
+    element: (
+      <UserProvider>
+        <AddEditBlog />
+      </UserProvider>
+    )
+  },
+  {
+    path: "/admin/blogs/edit/:id",
+    element: (
+      <UserProvider>
+        <AddEditBlog />
+      </UserProvider>
+    )
   },
   {
     path: "/admin/clients",

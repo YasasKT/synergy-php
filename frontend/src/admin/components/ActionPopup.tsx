@@ -8,6 +8,7 @@ interface ActionPopupProps {
   type?: "success" | "error" | "info"; // Different types of messages
   showTimerBar?: boolean; // Whether to show the timer bar
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  show?: boolean; 
 }
 
 const ActionPopup: React.FC<ActionPopupProps> = ({
